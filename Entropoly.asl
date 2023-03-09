@@ -178,7 +178,6 @@ start {
 }
 
 reset {
-    vars.Debug(vars.UpdatesSinceTouchedBed + "");
     if (
         settings["AutoReset"] && 
         old.obj_saveManager_current_save_file >= 0 &&
