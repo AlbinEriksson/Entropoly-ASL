@@ -1,5 +1,6 @@
-# Entropoly ASL 1.0
-A LiveSplit autosplitter for [ENTROPOLY](https://store.steampowered.com/app/2226160/ENTROPOLY/).
+# Entropoly ASL 1.1
+A LiveSplit autosplitter for [ENTROPOLY](https://store.steampowered.com/app/2226160/ENTROPOLY/)
+version 1.0.2.
 
 ## Features
 The following options are implemented in this autosplitter:
@@ -43,3 +44,7 @@ If you can't find the autosplitter in LiveSplit, you can install it manually.
 ## Missing Features
 * Crystals
   * Planned, but not yet implemented
+* Load removal
+  * Planned, but not yet implemented
+* Separate split for Domain of Hearts levels?
+  * Maybe, if there's enough demand
