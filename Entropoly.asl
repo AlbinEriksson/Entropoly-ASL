@@ -1,4 +1,6 @@
 state("Entropoly", "Not supported") {
+    int Current_Room: 0x0;
+
     string32 obj_gameManager_level_to_load : 0x0;
     int obj_bed_Count : 0x0;
     double obj_bed_ypos : 0x0;
@@ -21,35 +23,37 @@ state("Entropoly", "Not supported") {
     double obj_finish_dodeca_exiting : 0x0;
 }
 
-state("Entropoly", "1.0.2") {
-    string32 obj_gameManager_level_to_load : 0x132ace8, 0x0, 0x2f0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x210, 0x0, 0x0, 0x0;
+state("Entropoly", "1.0.3") {
+    int Current_Room: 0x153ff28;
 
-    int obj_bed_Count : 0x132ace8, 0x0, 0x5a0, 0x18, 0x60;
-    double obj_bed_ypos : 0x132ace8, 0x0, 0x5a0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x110, 0x0;
-    double obj_bed_activated : 0x132ace8, 0x0, 0x5a0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x20, 0x0;
+    string32 obj_gameManager_level_to_load : 0x132cdf8, 0x0, 0x2f0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x210, 0x0, 0x0, 0x0;
 
-    float obj_player_y : 0x132ace8, 0x0, 0x5e0, 0x18, 0x50, 0x10, 0xec;
+    int obj_bed_Count : 0x132cdf8, 0x0, 0x5a0, 0x18, 0x60;
+    double obj_bed_ypos : 0x132cdf8, 0x0, 0x5a0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x30, 0x0;
+    double obj_bed_activated : 0x132cdf8, 0x0, 0x5a0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x20, 0x0;
 
-    double obj_saveManager_current_save_file : 0x132ace8, 0x0, 0x610, 0x18, 0x50, 0x10, 0x48, 0x10, 0x1a0, 0x0;
+    float obj_player_y : 0x132cdf8, 0x0, 0x5e0, 0x18, 0x50, 0x10, 0xec;
 
-    ulong obj_level_portal_tetra_Iter : 0x132ace8, 0x0, 0x790, 0x18, 0x50;
-    ulong obj_level_portal_cube_Iter : 0x132ace8, 0x0, 0x7a0, 0x18, 0x50;
-    ulong obj_level_portal_octa_Iter : 0x132ace8, 0x0, 0x7b0, 0x18, 0x50;
-    ulong obj_level_portal_icosa_Iter : 0x132ace8, 0x0, 0x7c0, 0x18, 0x50;
-    ulong obj_level_portal_dodeca_Iter : 0x132ace8, 0x0, 0x7d0, 0x18, 0x50;
+    double obj_saveManager_current_save_file : 0x132cdf8, 0x0, 0x610, 0x18, 0x50, 0x10, 0x48, 0x10, 0x1a0, 0x0;
 
-    double obj_finish_tetra_exiting : 0x132ace8, 0x0, 0x740, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
-    double obj_finish_cube_exiting : 0x132ace8, 0x0, 0x750, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
-    double obj_finish_octa_exiting : 0x132ace8, 0x0, 0x760, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
-    double obj_finish_icosa_exiting : 0x132ace8, 0x0, 0x770, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
-    double obj_finish_dodeca_exiting : 0x132ace8, 0x0, 0x780, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
+    ulong obj_level_portal_tetra_Iter : 0x132cdf8, 0x0, 0x790, 0x18, 0x50;
+    ulong obj_level_portal_cube_Iter : 0x132cdf8, 0x0, 0x7a0, 0x18, 0x50;
+    ulong obj_level_portal_octa_Iter : 0x132cdf8, 0x0, 0x7b0, 0x18, 0x50;
+    ulong obj_level_portal_icosa_Iter : 0x132cdf8, 0x0, 0x7c0, 0x18, 0x50;
+    ulong obj_level_portal_dodeca_Iter : 0x132cdf8, 0x0, 0x7d0, 0x18, 0x50;
+
+    double obj_finish_tetra_exiting : 0x132cdf8, 0x0, 0x740, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
+    double obj_finish_cube_exiting : 0x132cdf8, 0x0, 0x750, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
+    double obj_finish_octa_exiting : 0x132cdf8, 0x0, 0x760, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
+    double obj_finish_icosa_exiting : 0x132cdf8, 0x0, 0x770, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
+    double obj_finish_dodeca_exiting : 0x132cdf8, 0x0, 0x780, 0x18, 0x50, 0x10, 0x48, 0x10, 0x6b0, 0x0;
 }
 
 init {
     int moduleSize = modules.First().ModuleMemorySize;
     vars.Debug("Module size: " + moduleSize);
-    if (moduleSize == 23105536) {
-        version = "1.0.2";
+    if (moduleSize == 23113728) {
+        version = "1.0.3";
     } else {
         version = "Not supported";
         vars.Debug("Unknown version!");
@@ -69,6 +73,10 @@ startup {
     settings.Add("SplitEnterLevel", false, "Split when pressing 'Enter' after touching a level portal");
     settings.Add("SplitContinueToHub", false, "Split when pressing 'Continue' after finishing a level");
     settings.Add("SplitIntroPortals", false, "Split when touching an intro portal");
+
+    vars.Room_Level = 3;
+    vars.OldRoom = "";
+    vars.Room = "";
 
     Func<string, bool> IsHub = (hubName) => {
         return (
@@ -92,6 +100,15 @@ startup {
             realmName == "heart"
         );
     };
+    vars.IsRealm = IsRealm;
+
+    Func<string, bool> IsDomainOfHearts = (levelName) => {
+        return (
+            levelName == "domain of hearts" ||
+            levelName == "hearthub"
+        );
+    };
+    vars.IsDomainOfHearts = IsDomainOfHearts;
 
     Func<string, Tuple<string, int>> GetRealmAndLevel = (levelName) => {
         if (levelName == null) return null;
@@ -192,16 +209,20 @@ reset {
 }
 
 update {
+    vars.OldRoom = vars.Room;
+    vars.Room =
+        current.Current_Room == vars.Room_Level
+        ? current.obj_gameManager_level_to_load
+        : "";
+
     // Scuffed method to check whether Poly is standing on the bed
     vars.OldUpdatesSinceTouchedBed = vars.UpdatesSinceTouchedBed;
     vars.UpdatesSinceTouchedBed += 1;
     if (
         current.obj_bed_Count == 1 &&
         current.obj_bed_activated == 1 &&
-        Math.Abs(current.obj_bed_ypos - current.obj_player_y) < 0.001 && (
-            current.obj_gameManager_level_to_load == "domain of hearts" ||
-            current.obj_gameManager_level_to_load == "hearthub"
-        )
+        Math.Abs(current.obj_bed_ypos - current.obj_player_y) < 0.001 &&
+        vars.IsDomainOfHearts(vars.Room)
     ) {
         vars.UpdatesSinceTouchedBed = 0;
     }
@@ -227,7 +248,7 @@ update {
     }
 
     vars.UpdatesSinceRoomChange += 1;
-    if (old.obj_gameManager_level_to_load != current.obj_gameManager_level_to_load) {
+    if (vars.Room != vars.OldRoom) {
         vars.UpdatesSinceRoomChange = 0;
     }
 }
@@ -241,23 +262,23 @@ split {
         return true;
     } else if (
         settings["SplitHub"] &&
-        old.obj_gameManager_level_to_load == "crossroads" &&
-        vars.IsHub(current.obj_gameManager_level_to_load)
+        vars.OldRoom == "crossroads" &&
+        vars.IsHub(vars.Room)
     ) {
         vars.Debug("Entered level hub.");
         return true;
     } else if (
         settings["SplitDomain"] &&
-        old.obj_gameManager_level_to_load == "crossroads" &&
-        current.obj_gameManager_level_to_load == "domain of hearts"
+        vars.OldRoom == "crossroads" &&
+        vars.IsDomainOfHearts(vars.Room)
     ) {
         vars.Debug("Entered Domain of Hearts.");
         return true;
     } else if (
         settings["SplitCrossroads"] &&
-        old.obj_gameManager_level_to_load != "crossroads" &&
-        current.obj_gameManager_level_to_load == "crossroads" &&
-        !vars.IsIntro(old.obj_gameManager_level_to_load)
+        vars.OldRoom != "crossroads" &&
+        vars.Room == "crossroads" &&
+        !vars.IsIntro(vars.OldRoom)
     ) {
         vars.Debug("Entered Crossroads.");
         return true;
@@ -273,23 +294,23 @@ split {
         settings["SplitTouchFinish"] &&
         vars.TouchedLevelFinish &&
         !vars.OldTouchedLevelFinish &&
-        vars.IsLevel(current.obj_gameManager_level_to_load)
+        vars.IsLevel(vars.Room)
     ) {
         vars.Debug("Touched a finish.");
         return true;
     } else if (
         settings["SplitEnterLevel"] && (
-            vars.IsHub(old.obj_gameManager_level_to_load) ||
-            old.obj_gameManager_level_to_load == "domain of hearts"
-        ) && vars.IsLevel(current.obj_gameManager_level_to_load)
+            vars.IsHub(vars.OldRoom) ||
+            vars.IsDomainOfHearts(vars.OldRoom)
+        ) && vars.IsLevel(vars.Room)
     ) {
         vars.Debug("Entered a level.");
         return true;
     } else if (
         settings["SplitContinueToHub"] &&
-        vars.IsLevel(old.obj_gameManager_level_to_load) && (
-            vars.IsHub(current.obj_gameManager_level_to_load) ||
-            current.obj_gameManager_level_to_load == "domain of hearts"
+        vars.IsLevel(vars.OldRoom) && (
+            vars.IsHub(vars.Room) ||
+            vars.IsDomainOfHearts(vars.Room)
         )
     ) {
         vars.Debug("Continued to hub.");
@@ -298,7 +319,7 @@ split {
         settings["SplitIntroPortals"] &&
         vars.TouchedLevelFinish &&
         !vars.OldTouchedLevelFinish &&
-        vars.IsIntro(current.obj_gameManager_level_to_load)
+        vars.IsIntro(vars.Room)
     ) {
         vars.Debug("Touched an intro portal.");
         return true;
