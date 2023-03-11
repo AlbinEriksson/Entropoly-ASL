@@ -78,6 +78,15 @@ startup {
     vars.OldRoom = "";
     vars.Room = "";
 
+    vars.OldSaveFile = -1;
+    vars.SaveFile = -1;
+
+    if (version == "1.0.3") {
+        vars.level_to_load_Pointer = new DeepPointer(
+            0x132cdf8, 0x0, 0x2f0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x210, 0x0, 0x0, 0x0
+        );
+    }
+
     Func<string, bool> IsHub = (hubName) => {
         return (
             hubName == "earthhub" ||
@@ -184,8 +193,8 @@ startup {
 start {
     if (
         settings["AutoStart"] &&
-        old.obj_saveManager_current_save_file == -1 &&
-        current.obj_saveManager_current_save_file >= 0
+        vars.OldSaveFile == -1 &&
+        vars.SaveFile >= 0 &&
     ) {
         vars.Debug("Starting timer.");
         return true;
@@ -197,8 +206,8 @@ start {
 reset {
     if (
         settings["AutoReset"] && 
-        old.obj_saveManager_current_save_file >= 0 &&
-        current.obj_saveManager_current_save_file == -1 &&
+        vars.OldSaveFile >= 0 &&
+        vars.SaveFile == -1 &&
         vars.UpdatesSinceTouchedBed > 100
     ) {
         vars.Debug("Resetting timer.");
@@ -209,6 +218,9 @@ reset {
 }
 
 update {
+    vars.OldSaveFile = vars.SaveFile;
+    vars.SaveFile = vars.level_to_load_Pointer.Deref<double>(game, -1);
+
     vars.OldRoom = vars.Room;
     vars.Room =
         current.Current_Room == vars.Room_Level
