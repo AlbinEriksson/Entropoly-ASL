@@ -78,14 +78,10 @@ startup {
     vars.OldRoom = "";
     vars.Room = "";
 
-    vars.OldSaveFile = -1;
-    vars.SaveFile = -1;
+    vars.OldSaveFile = -2;
+    vars.SaveFile = -2;
 
-    if (version == "1.0.3") {
-        vars.level_to_load_Pointer = new DeepPointer(
-            0x132cdf8, 0x0, 0x2f0, 0x18, 0x50, 0x10, 0x48, 0x10, 0x210, 0x0, 0x0, 0x0
-        );
-    }
+    vars.DeepPointersInitialized = false;
 
     Func<string, bool> IsHub = (hubName) => {
         return (
@@ -194,7 +190,7 @@ start {
     if (
         settings["AutoStart"] &&
         vars.OldSaveFile == -1 &&
-        vars.SaveFile >= 0 &&
+        vars.SaveFile >= 0
     ) {
         vars.Debug("Starting timer.");
         return true;
@@ -218,8 +214,19 @@ reset {
 }
 
 update {
+    if(!vars.DeepPointersInitialized) {
+        if (version == "1.0.3") {
+            vars.current_save_file_Pointer = new DeepPointer(
+                0x132cdf8, 0x0, 0x610, 0x18, 0x50, 0x10, 0x48, 0x10, 0x1a0, 0x0
+            );
+        }
+        vars.DeepPointersInitialized = true;
+    }
+
     vars.OldSaveFile = vars.SaveFile;
-    vars.SaveFile = vars.level_to_load_Pointer.Deref<double>(game, -1);
+    vars.SaveFile = vars.current_save_file_Pointer.Deref<double>(game, -2);
+
+    vars.Debug(vars.OldSaveFile + " " + vars.SaveFile);
 
     vars.OldRoom = vars.Room;
     vars.Room =
