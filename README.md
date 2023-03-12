@@ -1,4 +1,4 @@
-# Entropoly ASL 1.2.1
+# Entropoly ASL 1.3
 A LiveSplit autosplitter for [ENTROPOLY](https://store.steampowered.com/app/2226160/ENTROPOLY/)
 version 1.0.3.
 
@@ -15,6 +15,7 @@ The following options are implemented in this autosplitter:
   * Split when starting a level and/or returning to hub
 * Intro
   * Split when touching a portal in the intro
+  * Split when entering Crossroads after the intro
 * Ending
   * Split when the run is completed (obviously)
 

@@ -67,7 +67,8 @@ startup {
     settings.Add("AutoReset", false, "Reset timer when quitting to main menu");
     settings.Add("SplitHub", true, "Split when entering a level hub");
     settings.Add("SplitDomain", false, "Split when entering the Domain of Hearts");
-    settings.Add("SplitCrossroads", false, "Split when entering Crossroads");
+    settings.Add("SplitCrossroads", false, "Split when entering Crossroads from a level hub");
+    settings.Add("SplitIntro", false, "Split when entering Crossroads after the intro");
     settings.Add("SplitTouchPortal", false, "Split when touching a level portal");
     settings.Add("SplitTouchFinish", true, "Split when touching a level finish");
     settings.Add("SplitEnterLevel", false, "Split when pressing 'Enter' after touching a level portal");
@@ -226,8 +227,6 @@ update {
     vars.OldSaveFile = vars.SaveFile;
     vars.SaveFile = vars.current_save_file_Pointer.Deref<double>(game, -2);
 
-    vars.Debug(vars.OldSaveFile + " " + vars.SaveFile);
-
     vars.OldRoom = vars.Room;
     vars.Room =
         current.Current_Room == vars.Room_Level
@@ -300,6 +299,13 @@ split {
         !vars.IsIntro(vars.OldRoom)
     ) {
         vars.Debug("Entered Crossroads.");
+        return true;
+    } else if (
+        settings["SplitIntro"] &&
+        vars.IsIntro(vars.OldRoom) &&
+        vars.Room == "crossroads"
+    ) {
+        vars.Debug("Finished intro.");
         return true;
     } else if (
         settings["SplitTouchPortal"] &&
