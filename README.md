@@ -1,6 +1,6 @@
-# Entropoly ASL 1.3
+# Entropoly ASL 1.3.1
 A LiveSplit autosplitter for [ENTROPOLY](https://store.steampowered.com/app/2226160/ENTROPOLY/)
-version 1.0.3.
+version 1.0.4.
 
 ## Features
 The following options are implemented in this autosplitter:
